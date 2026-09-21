@@ -5,6 +5,7 @@
   "root": "apps/gateway",
   "sourceRoot": "apps/gateway/src",
   "compilerOptions": {
+    "deleteOutDir": true,
     "builder": "rspack",
     "tsConfigPath": "apps/gateway/tsconfig.app.json"
   },
