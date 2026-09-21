@@ -1,12 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
-import { OrderServiceService } from './order-service.service.js';
+import { MessagePattern } from '@nestjs/microservices';
 
 @Controller()
 export class OrderServiceController {
-  constructor(private readonly orderServiceService: OrderServiceService) {}
-
-  @Get()
-  getHello(): string {
-    return this.orderServiceService.getHello();
+  @MessagePattern({ cmd: 'health' })
+  health() {
+    return {
+      status: 'ok',
+      service: 'order-service',
+    };
   }
 }

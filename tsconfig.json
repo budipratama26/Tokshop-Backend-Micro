@@ -25,9 +25,6 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/Tokshop-Backend-Micro/tsconfig.app.json"
-    },
-    {
       "path": "./apps/gateway/tsconfig.app.json"
     },
     {

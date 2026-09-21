@@ -1,0 +1,9 @@
+import { UserRole } from '../../users/entities/user.entity.js';
+
+export interface JwtPayload {
+  sub: number;
+  email: string;
+  role: UserRole | string;
+  jti?: string;
+  exp?: number;
+}

@@ -9,6 +9,9 @@ export class GatewayController {
 
     @Inject('PRODUCT_SERVICE')
     private readonly productClient: ClientProxy,
+
+    @Inject('ORDER_SERVICE')
+    private readonly orderClient: ClientProxy,
   ) { }
 
   @Get('auth/health')
@@ -22,6 +25,13 @@ export class GatewayController {
   checkProductService() {
     return this.productClient.send({ cmd: 'health' },
       {},
+    );
+  }
+
+  @Get('orders/health')
+  checkOrderService() {
+    return this.orderClient.send({ cmd: 'health' },
+      {}
     );
   }
 }
