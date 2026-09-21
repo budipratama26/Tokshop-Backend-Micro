@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/Tokshop-Backend-Micro/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "builder": "rspack",
+    "tsConfigPath": "apps/Tokshop-Backend-Micro/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/Tokshop-Backend-Micro",
+  "projects": {
+    "Tokshop-Backend-Micro": {
+      "type": "application",
+      "root": "apps/Tokshop-Backend-Micro",
+      "entryFile": "main",
+      "sourceRoot": "apps/Tokshop-Backend-Micro/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/Tokshop-Backend-Micro/tsconfig.app.json"
+      }
+    },
+    "auth-service": {
+      "type": "application",
+      "root": "apps/auth-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/auth-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/auth-service/tsconfig.app.json"
+      }
+    },
+    "gateway": {
+      "type": "application",
+      "root": "apps/gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateway/tsconfig.app.json"
+      }
+    },
+    "order-service": {
+      "type": "application",
+      "root": "apps/order-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/order-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/order-service/tsconfig.app.json"
+      }
+    },
+    "product-service": {
+      "type": "application",
+      "root": "apps/product-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/product-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/product-service/tsconfig.app.json"
+      }
+    }
+  }
+}
