@@ -20,9 +20,12 @@ export class CreateUserDto {
   })
   name: string;
 
-  @IsEmail({}, {
-    message: ' format email gak valid!',
-  })
+  @IsEmail(
+    {},
+    {
+      message: ' format email gak valid!',
+    },
+  )
   @MaxLength(255, {
     message: 'Email maksimal 255 karakter!',
   })

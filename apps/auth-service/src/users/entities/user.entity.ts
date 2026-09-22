@@ -5,7 +5,6 @@ import {
   DeleteDateColumn,
 } from 'typeorm';
 
-
 export enum UserRole {
   ADMIN = 'admin',
   SELLER = 'seller',

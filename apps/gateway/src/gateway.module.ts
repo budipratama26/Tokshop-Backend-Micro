@@ -33,4 +33,4 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
   ],
   controllers: [GatewayController],
 })
-export class GatewayModule { }
+export class GatewayModule {}
