@@ -6,7 +6,7 @@ import { RefreshToken } from './auth/entities/refresh-token.entity.js';
 import { BlacklistedToken } from './auth/entities/blacklisted-token.entity.js';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ScheduleModule } from '@nestjs/schedule';
-import { TokenBlacklistedService } from './auth/token-blacklisted.service.js';
+import { TokenBlacklistedService } from './auth/token-blacklist.service.js';
 
 @Module({
   imports: [
