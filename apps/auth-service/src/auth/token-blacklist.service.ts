@@ -5,7 +5,7 @@ import { Cron, CronExpression } from '@nestjs/schedule';
 import { BlacklistedToken } from './entities/blacklisted-token.entity.js';
 
 @Injectable()
-export class TokenBlacklistedService {
+export class TokenBlacklistService {
     constructor(
         @InjectRepository(BlacklistedToken)
         private readonly repo: Repository<BlacklistedToken>,
