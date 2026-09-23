@@ -10,6 +10,7 @@ import { TokenBlacklistService } from './auth/token-blacklist.service.js';
 import { AuthService } from './auth/auth.service.js';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
+import { AuthServiceController } from './auth-service.controller.js';
 
 @Module({
   imports: [
@@ -25,7 +26,7 @@ import { JwtModule } from '@nestjs/jwt';
       entities: [User, RefreshToken, BlacklistedToken, AuditLog],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([User, RefreshToken, BlacklistedToken, AuditLog]),
+    TypeOrmModule.forFeature([RefreshToken, BlacklistedToken]),
 
     JwtModule.registerAsync({
       global: true,
@@ -40,13 +41,8 @@ import { JwtModule } from '@nestjs/jwt';
     }),
     UsersModule,
   ],
-  providers: [
-    AuthService,
-    TokenBlacklistService,
-  ],
-  exports: [
-    AuthService,
-    TokenBlacklistService,
-  ],
+  controllers: [AuthServiceController],
+  providers: [AuthService, TokenBlacklistService],
+  exports: [AuthService, TokenBlacklistService],
 })
-export class AuthServiceModule { }
+export class AuthServiceModule {}

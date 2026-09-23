@@ -1,9 +1,16 @@
 import { Module } from '@nestjs/common';
-import { GatewayController } from './gateway.controller.js';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { ConfigModule } from '@nestjs/config';
+import { HealthController } from './controllers/health.controller.js';
+import { UsersController } from './controllers/users.controller.js';
+import { AuthController } from './controllers/auth.controller.js';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+
     ClientsModule.register([
       {
         name: 'AUTH_SERVICE',
@@ -31,6 +38,6 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       },
     ]),
   ],
-  controllers: [GatewayController],
+  controllers: [HealthController, AuthController, UsersController],
 })
 export class GatewayModule {}

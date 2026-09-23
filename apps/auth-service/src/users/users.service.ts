@@ -42,6 +42,8 @@ export class UsersService {
       role: UserRole.CUSTOMER,
     });
 
+    await this.usersRepository.save(newUser);
+
     await this.auditLogService.log({
       action: 'REGISTER',
       userId: newUser.id,
